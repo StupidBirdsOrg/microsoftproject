@@ -2,9 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyMicroservice.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class OrderInfoController : ControllerBase
+public class OrderInfoController : BaseController
 {
     
     private readonly ILogger<OrderInfoController> _logger;
