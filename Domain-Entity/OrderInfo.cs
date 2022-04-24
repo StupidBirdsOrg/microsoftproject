@@ -1,6 +1,7 @@
 using System;
 
 namespace MyMicroservice;
+
 [Serializable]
 public class OrderInfo
 {
