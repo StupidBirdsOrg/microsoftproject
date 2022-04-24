@@ -19,7 +19,7 @@ public class OrderInfoController : BaseController
     /// 获取订单
     /// </summary>
     /// <returns></returns>
-    [HttpGet("GetOrder")]
+    [HttpGet]
     public OrderInfo GetOrder()
     {
         List<OrderDetail> list=new List<OrderDetail>();
@@ -31,7 +31,7 @@ public class OrderInfoController : BaseController
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpDelete("Delete/{id}")]
+    [HttpDelete("{id}")]
     public string DeleteOrder(string id)
     {
         return $"del {id}";
