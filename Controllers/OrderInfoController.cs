@@ -22,9 +22,9 @@ public class OrderInfoController : BaseController
     [HttpGet]
     public OrderInfo GetOrder()
     {
-        List<OrderDetail> list=new List<OrderDetail>();
+        var list= new List<OrderDetail>();
         list.Add(new OrderDetail{ContactName="131",PhoneNumber="12231231243",Amount=17.4d,ProductName="GB2103"});
-        return new OrderInfo("123",list);
+        return new OrderInfo(Guid.NewGuid().ToString("N2"),list);
     }
     /// <summary>
     /// 删除订单

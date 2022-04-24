@@ -4,7 +4,7 @@ namespace MyMicroservice;
 
 public interface IOrderInfoApi
 {
-    [Get("/OrderInfo/GetOrder")]
+    [Get("/OrderInfo")]
     Task<OrderInfo> GetOrderInfosAsync();
 
     [Delete("/OrderInfo/Delete/{id}")]
