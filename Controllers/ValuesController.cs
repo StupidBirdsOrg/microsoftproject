@@ -13,9 +13,10 @@ public class ValuesController : ControllerBase
 
     // GET api/values
     [HttpGet]
-    public async Task<List<OrderInfo>> GetAsync()
+    public async Task<OrderInfo> GetAsync()
     {
-        return await _api.GetOrderInfosAsync();                            
+        var result= await _api.GetOrderInfosAsync();   
+        return result;                         
     }
 
 }
