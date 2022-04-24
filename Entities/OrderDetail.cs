@@ -3,7 +3,6 @@
 /// <summary>
 /// 订单明细
 /// </summary>
-//[Serializable]
 public class OrderDetail
 {
     /// <summary>

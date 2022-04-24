@@ -5,7 +5,6 @@ namespace MyMicroservice;
 /// <summary>
 /// 订单信息
 /// </summary>
-[Serializable]
 public class OrderInfo
 {
     public OrderInfo(string id, IEnumerable<OrderDetail> details)
