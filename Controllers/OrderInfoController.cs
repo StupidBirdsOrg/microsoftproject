@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyMicroservice.Controllers;
 
+/// <summary>
+/// 订单信息控制器
+/// </summary>
 public class OrderInfoController : BaseController
 {
     
@@ -12,6 +15,10 @@ public class OrderInfoController : BaseController
         _logger = logger;
     }
     
+    /// <summary>
+    /// 获取订单
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("GetOrder")]
     public OrderInfo GetOrder()
     {
@@ -19,7 +26,11 @@ public class OrderInfoController : BaseController
         list.Add(new OrderDetail{ContactName="131",PhoneNumber="12231231243",Amount=17.4d,ProductName="GB2103"});
         return new OrderInfo("123",list);
     }
-
+    /// <summary>
+    /// 删除订单
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpDelete("Delete/{id}")]
     public string DeleteOrder(string id)
     {
