@@ -27,6 +27,17 @@ public class OrderInfoController : BaseController
         return new OrderInfo(Guid.NewGuid().ToString("N2"),list);
     }
     /// <summary>
+    /// 新增订单
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpPut]
+    public string PutOrder(string id)
+    {
+        _logger.LogInformation(string.Format("add {0}",id));
+        return $"Put {id}";
+    }
+    /// <summary>
     /// 删除订单
     /// </summary>
     /// <param name="id"></param>
@@ -36,5 +47,6 @@ public class OrderInfoController : BaseController
     {
         return $"del {id}";
     }
+
 
 }
