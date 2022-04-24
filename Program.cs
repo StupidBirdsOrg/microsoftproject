@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddRefitClient<IOrderInfoApi>()
-    .ConfigureHttpClient(httpclient => httpclient.BaseAddress = new Uri("http://localhost:5247"));
+    .ConfigureHttpClient(httpclient => httpclient.BaseAddress = new Uri(builder.Configuration.GetValue<string>("base_url")));
 
 // Add services to the container.
 builder.Services.AddControllers();
