@@ -5,7 +5,7 @@ namespace MyMicroservice.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Produces("javascript/json")]
+// [Produces("javascript/json")]
 public class BaseController : ControllerBase
 {
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MyMicroservice.Infrastructure;
 
 namespace MyMicroservice.Controllers;
 
@@ -9,10 +10,12 @@ public class OrderInfoController : BaseController
 {
     
     private readonly ILogger<OrderInfoController> _logger;
+    private readonly IOperation _oper;
 
-    public OrderInfoController(ILogger<OrderInfoController> logger)
+    public OrderInfoController(ILogger<OrderInfoController> logger,IOperation operation)
     {
         _logger = logger;
+        _oper=operation;
     }
     
     /// <summary>
