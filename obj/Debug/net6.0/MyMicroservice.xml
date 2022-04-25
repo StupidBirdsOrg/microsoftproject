@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyMicroservice</name>
+    </assembly>
+    <members>
+        <member name="T:MyMicroservice.Controllers.OrderInfoController">
+            <summary>
+            订单信息控制器
+            </summary>
+        </member>
+        <member name="M:MyMicroservice.Controllers.OrderInfoController.GetOrder">
+            <summary>
+            获取订单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroservice.Controllers.OrderInfoController.PutOrder(System.String)">
+            <summary>
+            新增订单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroservice.Controllers.OrderInfoController.DeleteOrder(System.String)">
+            <summary>
+            删除订单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroservice.OrderDetail">
+            <summary>
+            订单明细
+            </summary>
+        </member>
+        <member name="P:MyMicroservice.OrderDetail.ContactName">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:MyMicroservice.OrderDetail.PhoneNumber">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:MyMicroservice.OrderDetail.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:MyMicroservice.OrderDetail.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="T:MyMicroservice.OrderInfo">
+            <summary>
+            订单信息
+            </summary>
+        </member>
+        <member name="P:MyMicroservice.OrderInfo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:MyMicroservice.OrderInfo.Details">
+            <summary>
+            订单明细
+            </summary>
+        </member>
+        <member name="T:Refit.Implementation.Generated">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.GetOrderInfosAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.PutOrderAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.DeleteOrderAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.MyMicroservice#IOrderInfoApi#GetOrderInfosAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.MyMicroservice#IOrderInfoApi#PutOrderAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.MyMicroserviceIOrderInfoApi.MyMicroservice#IOrderInfoApi#DeleteOrderAsync(System.String)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
