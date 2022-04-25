@@ -29,7 +29,6 @@ public class ExceptionMiddleware
         var response = new BaseResult();
         response.Status = ResultStatus.Failure;
         response.Msg = _environment.IsDevelopment()?e.Message:"Failure";
-
         await context.Response.WriteAsync(System.Text.Json.JsonSerializer.Serialize(response));
     }
 }
