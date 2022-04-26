@@ -6,12 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddRefitClient<IOrderInfoApi>()
-    .ConfigureHttpClient(httpclient => httpclient.BaseAddress = new Uri(builder.Configuration.GetValue<string>("base_url")));
+    .ConfigureHttpClient(httpclient => httpclient.BaseAddress = new Uri(builder.Configuration.GetValue<string>("base_url")))
+    .AddHttpMessageHandler<AuthHeaderHandler>();
 builder.WebHost.ConfigureAppConfiguration(option=>
 {
     Console.WriteLine("WEB_Configure");
 });
 builder.Services.AddScoped<IOperation,Operation>();
+
+builder.Services.AddTransient<AuthHeaderHandler>();
+
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
