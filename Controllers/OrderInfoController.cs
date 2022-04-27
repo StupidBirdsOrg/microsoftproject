@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MyMicroservice.Infrastructure;
+using MyMicroservice.Domain;
+using MyMicroservice.Domain;
 
 namespace MyMicroservice.Controllers;
 
@@ -8,16 +9,16 @@ namespace MyMicroservice.Controllers;
 /// </summary>
 public class OrderInfoController : BaseController
 {
-    
+
     private readonly ILogger<OrderInfoController> _logger;
     private readonly IOperation _oper;
 
-    public OrderInfoController(ILogger<OrderInfoController> logger,IOperation operation)
+    public OrderInfoController(ILogger<OrderInfoController> logger, IOperation operation)
     {
         _logger = logger;
-        _oper=operation;
+        _oper = operation;
     }
-    
+
     /// <summary>
     /// 获取订单
     /// </summary>
@@ -25,9 +26,16 @@ public class OrderInfoController : BaseController
     [HttpGet]
     public OrderInfo GetOrder()
     {
-        var list= new List<OrderDetail>();
-        list.Add(new OrderDetail{ContactName="131",PhoneNumber="12231231243",Amount=17.4d,ProductName="GB2103"});
-        return new OrderInfo(Guid.NewGuid().ToString("N2"),list);
+        var list = new List<OrderDetail>();
+        list.Add(new OrderDetail { ContactName = "131", PhoneNumber = "12231231243", Amount = 17.4d, ProductName = "GB2103" });
+        return new OrderInfo(Guid.NewGuid().ToString("N2"), list);
+    }
+    [HttpGet("{id}")]
+    public OrderInfo GetOrder([FromServices] IOperation service, string id)
+    {
+        var list = new List<OrderDetail>();
+        list.Add(new OrderDetail { ContactName = "131", PhoneNumber = "12231231243", Amount = 17.4d, ProductName = "GB2103" });
+        return new OrderInfo(service.OperationAction("12"), list);
     }
     /// <summary>
     /// 新增订单
@@ -37,7 +45,7 @@ public class OrderInfoController : BaseController
     [HttpPut]
     public string PutOrder(string id)
     {
-        _logger.LogInformation(string.Format("add {0}",id));
+        _logger.LogInformation(string.Format("add {0}", id));
         return $"Put {id}";
     }
     /// <summary>
@@ -50,6 +58,7 @@ public class OrderInfoController : BaseController
     {
         return $"del {id}";
     }
+
 
 
 }

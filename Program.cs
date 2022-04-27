@@ -1,4 +1,5 @@
 using MyMicroservice;
+using MyMicroservice.Domain;
 using MyMicroservice.Infrastructure;
 using Refit;
 
@@ -13,6 +14,12 @@ builder.WebHost.ConfigureAppConfiguration(option=>
     Console.WriteLine("WEB_Configure");
 });
 builder.Services.AddScoped<IOperation,Operation>();
+
+builder.Services.AddScoped<IOperation>(ServiceProvider=>
+{
+    return new Operation();
+});
+builder.Services.AddSingleton(typeof(IGenericService<>),typeof(GenericService<>));
 
 builder.Services.AddTransient<AuthHeaderHandler>();
 
